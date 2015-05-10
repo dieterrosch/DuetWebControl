@@ -127,6 +127,7 @@
 										<li role="presentation" class="navitem navitem-spools"><a class="navlink" href="#" data-target="spools"><span class="glyphicon glyphicon-record"></span> Spools</a></li>
 										<li role="presentation" class="navitem navitem-maintenance hidden"><a class="navlink" href="#" data-target="maintenance"><span class="glyphicon glyphicon-wrench"></span> Maintenance</a></li>
 										<li role="presentation" class="navitem navitem-settings"><a class="navlink" href="#" data-target="settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                                        <li role="presentation" class="navitem navitem-extensions"><a class="navlink" href="#" data-target="extensions"><span class="glyphicon glyphicon-hand-up"></span>  Touchscreen Exts</a></li>
 										<li role="presentation" class="navitem navitem-help hidden"><a class="navlink" href="#" data-target="help"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
 									</ul>
 								</td>
@@ -460,6 +461,7 @@
 					</ul>
 					<ul class="nav nav-sidebar">
 						<li class="navitem navitem-settings"><a class="navlink" href="#" data-target="settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                        <li class="navitem navitem-extensions"><a class="navlink" href="#" data-target="extensions"><span class="glyphicon glyphicon-hand-up"></span> Touchscreen Exts</a></li>
 						<li class="navitem navitem-help hidden"><a class="navlink" href="#" data-target="help"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
 					</ul>
 				</div>
@@ -1404,6 +1406,34 @@
 						</form>
 					</div>
 				
+					<!-- Extensions -->
+					<div id="page_extensions" class="page">
+						<div class="panel panel-default" id="panel_touchscreen_extensions">
+                            <div class="panel-heading">
+                                <span>Touch Screen Extensions</span>
+                            </div>
+                        </div>						
+                        <div class="row">
+							<form class="extensions-buttons">
+                                    <div class="col-xs-6">
+                                        <div class="btn-group btn-group-justified">
+                                            <div class="btn-group">
+                                                <button type="submit" class="btn btn-exit-browser btn-primary" title="Close browser window"><span class="glyphicon glyphicon-remove-sign"></span> Exit Browser</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+						</div>
+						
+<!-- 						<div class="row">
+							<div class="col-md-12">
+								<div class="container-fluid" id="console_log">
+								</div>
+							</div>
+						</div>
+ -->					</div>
+					
+
 					<!-- Help -->
 					<div id="page_help" class="page">
 						<div class="row">
@@ -1542,5 +1572,6 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/bootstrap-slider.min.js"></script>
 		<script src="js/interface.js"></script>
+        <script src="js/touchscreen_extensions.js"></script>
 	</body>
 </html>
