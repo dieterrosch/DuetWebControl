@@ -71,6 +71,7 @@ var settings = {
 	useKiB: true,					// display file sizes in KiB instead of KB
 	showFanControl: false,			// show fan controls
 	showATXControl: false,			// show ATX control
+    showInfoPanel: false,			// show Info Panel at startup
 	confirmStop: false,				// ask for confirmation when pressing Emergency STOP
 	moveFeedrate: 6000,				// in mm/min
 	
@@ -916,6 +917,9 @@ function loadSettings() {
 		if (loadedSettings.hasOwnProperty("showATXControl")) {
 			settings.showATXControl = loadedSettings.showATXControl;
 		}
+		if (loadedSettings.hasOwnProperty("showInfoPanel")) {
+			settings.showInfoPanel = loadedSettings.showInfoPanel;
+		}
 		if (loadedSettings.hasOwnProperty("confirmStop")) {
 			settings.confirmStop = loadedSettings.confirmStop;
 		}
@@ -961,6 +965,7 @@ function saveSettings() {
 	settings.useKiB = $("#use_kib").is(":checked");
 	settings.showFanControl = $("#fan_sliders").is(":checked");
 	settings.showATXControl = $("#show_atx").is(":checked");
+    settings.showInfoPanel = $("#show_info_panel").is(":checked");
 	settings.confirmStop = $("#confirm_stop").is(":checked");
 	settings.moveFeedrate = checkBoundaries($("#move_feedrate").val(), defaultSettings.moveFeedrate, 0);
 	if (settings.language != $("#btn_language").data("language")) {
@@ -1044,6 +1049,15 @@ function applySettings() {
 	} else {
 		$(".atx-control").addClass("hidden");
 	}
+	// Show/Hide Info Panel
+	if (settings.showInfoPanel) {
+		$(".btn-hide-info").addClass("active");       
+        $("#row_info").removeClass("hidden-xs hidden-sm");
+	} else {
+		$(".btn-hide-info").removeClass("active");       
+        $("#row_info").addClass("hidden-xs hidden-sm");
+	}
+
 	
 	// Possibly hide entire misc control panel
 	if (!settings.showFanControl && !settings.showATXControl) {
@@ -1061,7 +1075,7 @@ function applySettings() {
 	$("#uppercase_gcode").prop("checked", settings.uppercaseGCode);
 	$("#use_kib").prop("checked", settings.useKiB);
 	$("#fan_sliders").prop("checked", settings.showFanControl);
-	$("#show_atx").prop("checked", settings.showATXControl);
+	$("#show_info_panel").prop("checked", settings.showInfoPanel);
 	$("#confirm_stop").prop("checked", settings.confirmStop);
 	$("#move_feedrate").val(settings.moveFeedrate);
 	
@@ -3690,3 +3704,4 @@ function uploadHasFinished() {
 	// Start polling again
 	updateStatus();
 }
+

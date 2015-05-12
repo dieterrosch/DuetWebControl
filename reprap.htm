@@ -141,7 +141,7 @@
 		<!-- Main Content -->
 		<div class="container-fluid">
 			<!-- Info Panels -->
-			<div class="row" id="row_info">
+			<div class="row hidden-xs hidden-sm" id="row_info">
 				<!-- Heater Temperatures -->
 				<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" id="div_heaters">
 					<div class="panel panel-info panel-status">
@@ -1129,6 +1129,12 @@
 														<input type="checkbox" id="show_atx" checked /> Show ATX Power control
 													</label>
 												</div>
+												<div class="checkbox">
+													<label title="Show the info panel on startup">
+														<input type="checkbox" id="show_info_panel" checked /> Show Info Panel at Startup
+													</label>
+												</div>
+                                                
 												<div class="checkbox">
 													<label title="Confirm emergency stop by displaying a message box">
 														<input type="checkbox" id="confirm_stop" /> Confirm Emergency STOP

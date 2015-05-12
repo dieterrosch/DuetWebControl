@@ -12,6 +12,13 @@ $(".btn-exit-browser").click(function() {
 			// window.close();
 		// });
 	// } else {
+        //If we are in firefox, we need a stupud workaround to close the window
+        var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+        if (is_firefox)
+        {
+            window.open('','_parent',''); 
+            //alert("hier");
+        }
         window.close();
 	// }
 });
